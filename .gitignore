@@ -1,0 +1,7 @@
+cdl_vpod/*
+/cdl_vpod
+cdl_vpod/
+__pycache__/
+lastreport.txt
+lasterror.txt
+sequence.py

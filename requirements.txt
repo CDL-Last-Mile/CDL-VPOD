@@ -1,0 +1,13 @@
+Flask
+Flask-Mail
+Flask-SQLAlchemy
+pymssql
+PyMySQL
+python-dotenv
+SQLAlchemy==1.3.23
+XlsxWriter
+Werkzeug
+flask-login
+flask-bcrypt
+wfastcgi
+requests

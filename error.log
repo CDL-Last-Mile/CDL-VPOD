@@ -1,0 +1,664 @@
+2022-09-20 15:08:56,908 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-09-20 15:08:56,908 [33mPress CTRL+C to quit[0m
+2022-09-20 15:09:07,671 127.0.0.1 - - [20/Sep/2022 15:09:07] "GET / HTTP/1.1" 200 -
+2022-09-20 15:09:07,918 127.0.0.1 - - [20/Sep/2022 15:09:07] "GET /static/logo.png HTTP/1.1" 200 -
+2022-09-20 15:09:08,072 127.0.0.1 - - [20/Sep/2022 15:09:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-09-20 15:09:09,572 127.0.0.1 - - [20/Sep/2022 15:09:09] "GET /clients HTTP/1.1" 200 -
+2022-09-20 15:11:13,096 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-09-20 15:11:13,096 [33mPress CTRL+C to quit[0m
+2022-09-20 15:11:15,332 127.0.0.1 - - [20/Sep/2022 15:11:15] "GET / HTTP/1.1" 200 -
+2022-09-20 15:11:15,386 127.0.0.1 - - [20/Sep/2022 15:11:15] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -
+2022-09-20 15:11:15,464 127.0.0.1 - - [20/Sep/2022 15:11:15] "GET /clients HTTP/1.1" 200 -
+2022-09-20 15:13:37,847 127.0.0.1 - - [20/Sep/2022 15:13:37] "POST /generate HTTP/1.1" 200 -
+2022-09-21 13:47:13,639 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-09-21 13:47:13,640 [33mPress CTRL+C to quit[0m
+2022-09-21 13:47:28,978 127.0.0.1 - - [21/Sep/2022 13:47:28] "GET / HTTP/1.1" 200 -
+2022-09-21 13:47:29,025 127.0.0.1 - - [21/Sep/2022 13:47:29] "[33mGET /vpod/static/logo.png HTTP/1.1[0m" 404 -
+2022-09-21 13:47:37,558 127.0.0.1 - - [21/Sep/2022 13:47:37] "GET /hourly HTTP/1.1" 200 -
+2022-09-21 13:48:48,801 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-09-21 13:48:48,801 [33mPress CTRL+C to quit[0m
+2022-09-21 13:48:52,680 127.0.0.1 - - [21/Sep/2022 13:48:52] "GET /hourly HTTP/1.1" 200 -
+2022-09-21 13:50:03,579 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2022-09-21 13:50:03,579 [33mPress CTRL+C to quit[0m
+2022-09-21 13:50:08,894 127.0.0.1 - - [21/Sep/2022 13:50:08] "GET /hourly HTTP/1.1" 200 -
+2023-02-23 15:05:14,328 Exception on /hourly [GET]
+Traceback (most recent call last):
+  File "src\pymssql\_pymssql.pyx", line 460, in pymssql._pymssql.Cursor.execute
+  File "src\pymssql\_mssql.pyx", line 1086, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1117, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1250, in pymssql._mssql.MSSQLConnection.format_and_run_query
+  File "src\pymssql\_mssql.pyx", line 1788, in pymssql._mssql.check_cancel_and_raise
+  File "src\pymssql\_mssql.pyx", line 1834, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 478, in pymssql._pymssql.Cursor.execute
+pymssql._pymssql.OperationalError: (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 54, in get_images
+    res = [r._asdict() for r in dbquery.all()]
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
+    return list(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3560, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 478, in pymssql._pymssql.Cursor.execute
+sqlalchemy.exc.OperationalError: (pymssql._pymssql.OperationalError) (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+[SQL: SELECT [xView_Orders].[OrderTrackingID] AS [xView_Orders_OrderTrackingID], [xView_Orders].[ClientRefNo] AS [xView_Orders_ClientRefNo], [xView_Orders].[PODname] AS [xView_Orders_PODname], [Documents].[DocumentBinary] AS [Documents_DocumentBinary], [Documents].[FileFormat] AS [Documents_FileFormat], [Documents].[IsVisibleOnline] AS [Documents_IsVisibleOnline], [xView_OrderDocuments].[OrderTrackingID] AS [xView_OrderDocuments_OrderTrackingID] 
+FROM [xView_Orders] JOIN [xView_OrderDocuments] ON [xView_Orders].[OrderTrackingID] = [xView_OrderDocuments].[OrderTrackingID] JOIN [Documents] ON [xView_OrderDocuments].[DocumentID] = [Documents].[DocumentID] 
+WHERE [xView_Orders].[ClientID] = %(ClientID_1)s AND [Documents].[IsVisibleOnline] = %(IsVisibleOnline_1)s AND [xView_Orders].[PODcompletion] >= %(PODcompletion_1)s]
+[parameters: {'ClientID_1': 1773, 'IsVisibleOnline_1': 1, 'PODcompletion_1': datetime.datetime(2023, 2, 23, 14, 5, 4, 340908)}]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 163, in get_hourly_rte
+    clients = get_hourly_images()
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 96, in get_hourly_images
+    get_images(client_id=client)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 89, in get_images
+    send_error_email(error_msg=e)
+  File "D:\CDL\CDL-VPOD\.\vpod\utils.py", line 25, in send_error_email
+    mail.send(msg)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "C:\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [CH2PR14CA0008.namprd14.prod.outlook.com 2023-02-23T20:05:14.320Z 08DB15821898C8EC]')
+2023-02-23 16:05:14,935 Exception on /hourly [GET]
+Traceback (most recent call last):
+  File "src\pymssql\_pymssql.pyx", line 646, in pymssql._pymssql.connect
+  File "src\pymssql\_mssql.pyx", line 2108, in pymssql._mssql.connect
+  File "src\pymssql\_mssql.pyx", line 700, in pymssql._mssql.MSSQLConnection.__init__
+  File "src\pymssql\_mssql.pyx", line 1817, in pymssql._mssql.maybe_raise_MSSQLDatabaseException
+  File "src\pymssql\_mssql.pyx", line 1834, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (18456, b"Login failed for user 'CDL_VPOD'.DB-Lib error message 20018, severity 14:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\n")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    with util.safe_reraise():
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 660, in __connect
+    with util.safe_reraise():
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "src\pymssql\_pymssql.pyx", line 652, in pymssql._pymssql.connect
+pymssql._pymssql.OperationalError: (18456, b"Login failed for user 'CDL_VPOD'.DB-Lib error message 20018, severity 14:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 54, in get_images
+    res = [r._asdict() for r in dbquery.all()]
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
+    return list(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3556, in _execute_and_instances
+    conn = self._get_bind_args(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3571, in _get_bind_args
+    return fn(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\session.py", line 1142, in connection
+    return self._connection_for_bind(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\session.py", line 1150, in _connection_for_bind
+    return self.transaction._connection_for_bind(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    with util.safe_reraise():
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 660, in __connect
+    with util.safe_reraise():
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "src\pymssql\_pymssql.pyx", line 652, in pymssql._pymssql.connect
+sqlalchemy.exc.OperationalError: (pymssql._pymssql.OperationalError) (18456, b"Login failed for user 'CDL_VPOD'.DB-Lib error message 20018, severity 14:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\n")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 163, in get_hourly_rte
+    clients = get_hourly_images()
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 96, in get_hourly_images
+    get_images(client_id=client)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 89, in get_images
+    send_error_email(error_msg=e)
+  File "D:\CDL\CDL-VPOD\.\vpod\utils.py", line 25, in send_error_email
+    mail.send(msg)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "C:\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [CH2PR12CA0005.namprd12.prod.outlook.com 2023-02-23T21:05:14.936Z 08DB1533E5140474]')
+2023-03-30 15:05:25,129 Exception on /hourly [GET]
+Traceback (most recent call last):
+  File "src\pymssql\_pymssql.pyx", line 460, in pymssql._pymssql.Cursor.execute
+  File "src\pymssql\_mssql.pyx", line 1086, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1117, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1250, in pymssql._mssql.MSSQLConnection.format_and_run_query
+  File "src\pymssql\_mssql.pyx", line 1788, in pymssql._mssql.check_cancel_and_raise
+  File "src\pymssql\_mssql.pyx", line 1834, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 478, in pymssql._pymssql.Cursor.execute
+pymssql._pymssql.OperationalError: (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 54, in get_images
+    res = [r._asdict() for r in dbquery.all()]
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
+    return list(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3560, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 478, in pymssql._pymssql.Cursor.execute
+sqlalchemy.exc.OperationalError: (pymssql._pymssql.OperationalError) (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+[SQL: SELECT [xView_Orders].[OrderTrackingID] AS [xView_Orders_OrderTrackingID], [xView_Orders].[ClientRefNo] AS [xView_Orders_ClientRefNo], [xView_Orders].[PODname] AS [xView_Orders_PODname], [Documents].[DocumentBinary] AS [Documents_DocumentBinary], [Documents].[FileFormat] AS [Documents_FileFormat], [Documents].[IsVisibleOnline] AS [Documents_IsVisibleOnline], [xView_OrderDocuments].[OrderTrackingID] AS [xView_OrderDocuments_OrderTrackingID] 
+FROM [xView_Orders] JOIN [xView_OrderDocuments] ON [xView_Orders].[OrderTrackingID] = [xView_OrderDocuments].[OrderTrackingID] JOIN [Documents] ON [xView_OrderDocuments].[DocumentID] = [Documents].[DocumentID] 
+WHERE [xView_Orders].[ClientID] = %(ClientID_1)s AND [Documents].[IsVisibleOnline] = %(IsVisibleOnline_1)s AND [xView_Orders].[PODcompletion] >= %(PODcompletion_1)s]
+[parameters: {'ClientID_1': 1773, 'IsVisibleOnline_1': 1, 'PODcompletion_1': datetime.datetime(2023, 3, 30, 14, 5, 20, 443758)}]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 163, in get_hourly_rte
+    clients = get_hourly_images()
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 96, in get_hourly_images
+    get_images(client_id=client)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 89, in get_images
+    send_error_email(error_msg=e)
+  File "D:\CDL\CDL-VPOD\.\vpod\utils.py", line 25, in send_error_email
+    mail.send(msg)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "C:\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [CH0PR03CA0433.namprd03.prod.outlook.com 2023-03-30T19:05:25.182Z 08DB30DDB7055FBE]')
+2023-04-28 15:05:17,624 Exception on /hourly [GET]
+Traceback (most recent call last):
+  File "src\pymssql\_pymssql.pyx", line 460, in pymssql._pymssql.Cursor.execute
+  File "src\pymssql\_mssql.pyx", line 1086, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1117, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1250, in pymssql._mssql.MSSQLConnection.format_and_run_query
+  File "src\pymssql\_mssql.pyx", line 1788, in pymssql._mssql.check_cancel_and_raise
+  File "src\pymssql\_mssql.pyx", line 1834, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 478, in pymssql._pymssql.Cursor.execute
+pymssql._pymssql.OperationalError: (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 54, in get_images
+    res = [r._asdict() for r in dbquery.all()]
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
+    return list(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3560, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 478, in pymssql._pymssql.Cursor.execute
+sqlalchemy.exc.OperationalError: (pymssql._pymssql.OperationalError) (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+[SQL: SELECT [xView_Orders].[OrderTrackingID] AS [xView_Orders_OrderTrackingID], [xView_Orders].[ClientRefNo] AS [xView_Orders_ClientRefNo], [xView_Orders].[PODname] AS [xView_Orders_PODname], [Documents].[DocumentBinary] AS [Documents_DocumentBinary], [Documents].[FileFormat] AS [Documents_FileFormat], [Documents].[IsVisibleOnline] AS [Documents_IsVisibleOnline], [xView_OrderDocuments].[OrderTrackingID] AS [xView_OrderDocuments_OrderTrackingID] 
+FROM [xView_Orders] JOIN [xView_OrderDocuments] ON [xView_Orders].[OrderTrackingID] = [xView_OrderDocuments].[OrderTrackingID] JOIN [Documents] ON [xView_OrderDocuments].[DocumentID] = [Documents].[DocumentID] 
+WHERE [xView_Orders].[ClientID] = %(ClientID_1)s AND [Documents].[IsVisibleOnline] = %(IsVisibleOnline_1)s AND [xView_Orders].[PODcompletion] >= %(PODcompletion_1)s]
+[parameters: {'ClientID_1': 1773, 'IsVisibleOnline_1': 1, 'PODcompletion_1': datetime.datetime(2023, 4, 28, 14, 5, 3, 529134)}]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 163, in get_hourly_rte
+    clients = get_hourly_images()
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 96, in get_hourly_images
+    get_images(client_id=client)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 89, in get_images
+    send_error_email(error_msg=e)
+  File "D:\CDL\CDL-VPOD\.\vpod\utils.py", line 25, in send_error_email
+    mail.send(msg)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "C:\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [CH0PR13CA0057.namprd13.prod.outlook.com 2023-04-28T19:05:17.702Z 08DB472ACEC95FC8]')
+2023-06-01 15:05:18,649 Exception on /hourly [GET]
+Traceback (most recent call last):
+  File "src\pymssql\_pymssql.pyx", line 460, in pymssql._pymssql.Cursor.execute
+  File "src\pymssql\_mssql.pyx", line 1086, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1117, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1250, in pymssql._mssql.MSSQLConnection.format_and_run_query
+  File "src\pymssql\_mssql.pyx", line 1788, in pymssql._mssql.check_cancel_and_raise
+  File "src\pymssql\_mssql.pyx", line 1834, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 478, in pymssql._pymssql.Cursor.execute
+pymssql._pymssql.OperationalError: (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 54, in get_images
+    res = [r._asdict() for r in dbquery.all()]
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
+    return list(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3560, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 478, in pymssql._pymssql.Cursor.execute
+sqlalchemy.exc.OperationalError: (pymssql._pymssql.OperationalError) (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
+[SQL: SELECT [xView_Orders].[OrderTrackingID] AS [xView_Orders_OrderTrackingID], [xView_Orders].[ClientRefNo] AS [xView_Orders_ClientRefNo], [xView_Orders].[PODname] AS [xView_Orders_PODname], [Documents].[DocumentBinary] AS [Documents_DocumentBinary], [Documents].[FileFormat] AS [Documents_FileFormat], [Documents].[IsVisibleOnline] AS [Documents_IsVisibleOnline], [xView_OrderDocuments].[OrderTrackingID] AS [xView_OrderDocuments_OrderTrackingID] 
+FROM [xView_Orders] JOIN [xView_OrderDocuments] ON [xView_Orders].[OrderTrackingID] = [xView_OrderDocuments].[OrderTrackingID] JOIN [Documents] ON [xView_OrderDocuments].[DocumentID] = [Documents].[DocumentID] 
+WHERE [xView_Orders].[ClientID] = %(ClientID_1)s AND [Documents].[IsVisibleOnline] = %(IsVisibleOnline_1)s AND [xView_Orders].[PODcompletion] >= %(PODcompletion_1)s]
+[parameters: {'ClientID_1': 1773, 'IsVisibleOnline_1': 1, 'PODcompletion_1': datetime.datetime(2023, 6, 1, 14, 5, 4, 132760)}]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 163, in get_hourly_rte
+    clients = get_hourly_images()
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 96, in get_hourly_images
+    get_images(client_id=client)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 89, in get_images
+    send_error_email(error_msg=e)
+  File "D:\CDL\CDL-VPOD\.\vpod\utils.py", line 25, in send_error_email
+    mail.send(msg)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "C:\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [CH2PR14CA0019.namprd14.prod.outlook.com 2023-06-01T19:05:18.767Z 08DB622ACB2E3121]')
+2023-06-29 16:05:31,215 Exception on /hourly [GET]
+Traceback (most recent call last):
+  File "src\pymssql\_pymssql.pyx", line 646, in pymssql._pymssql.connect
+  File "src\pymssql\_mssql.pyx", line 2108, in pymssql._mssql.connect
+  File "src\pymssql\_mssql.pyx", line 700, in pymssql._mssql.MSSQLConnection.__init__
+  File "src\pymssql\_mssql.pyx", line 1817, in pymssql._mssql.maybe_raise_MSSQLDatabaseException
+  File "src\pymssql\_mssql.pyx", line 1834, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (18456, b"Login failed for user 'CDL_VPOD'.DB-Lib error message 20018, severity 14:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\n")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    with util.safe_reraise():
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 660, in __connect
+    with util.safe_reraise():
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "src\pymssql\_pymssql.pyx", line 652, in pymssql._pymssql.connect
+pymssql._pymssql.OperationalError: (18456, b"Login failed for user 'CDL_VPOD'.DB-Lib error message 20018, severity 14:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 54, in get_images
+    res = [r._asdict() for r in dbquery.all()]
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
+    return list(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3556, in _execute_and_instances
+    conn = self._get_bind_args(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3571, in _get_bind_args
+    return fn(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\session.py", line 1142, in connection
+    return self._connection_for_bind(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\session.py", line 1150, in _connection_for_bind
+    return self.transaction._connection_for_bind(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\orm\session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 1583, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    with util.safe_reraise():
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 660, in __connect
+    with util.safe_reraise():
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\pool\base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\sqlalchemy\engine\default.py", line 508, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "src\pymssql\_pymssql.pyx", line 652, in pymssql._pymssql.connect
+sqlalchemy.exc.OperationalError: (pymssql._pymssql.OperationalError) (18456, b"Login failed for user 'CDL_VPOD'.DB-Lib error message 20018, severity 14:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\nDB-Lib error message 20002, severity 9:\nAdaptive Server connection failed (172.24.32.210)\n")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 163, in get_hourly_rte
+    clients = get_hourly_images()
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 96, in get_hourly_images
+    get_images(client_id=client)
+  File "D:\CDL\CDL-VPOD\.\vpod\main\routes.py", line 89, in get_images
+    send_error_email(error_msg=e)
+  File "D:\CDL\CDL-VPOD\.\vpod\utils.py", line 25, in send_error_email
+    mail.send(msg)
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "D:\CDL\CDL-VPOD\cdl_vpod\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "C:\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [CP4P284CA0002.BRAP284.PROD.OUTLOOK.COM 2023-06-29T20:05:31.201Z 08DB78472925185C]')
